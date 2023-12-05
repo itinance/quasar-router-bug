@@ -11,7 +11,23 @@ The issue is described best like this:
 When I push the User to another route, only the URL in the browser will be updated, but the corresponding Component will not get rendered.
 I have to manually refresh the web page in the Webbrowser in order to get the corresponding component rendered properly.
 
-# 2. Code
+# 2. What happens instead?
+
+3.1 This is the index page, containing the button that shall send the user to another page:
+
+[![enter image description here][1]][1]
+
+3.2. When I click on the Button, the URL will be updated correctly but the test-component won't get rendered at all:
+
+[![enter image description here][2]][2]
+
+3.3. But when I refresh the web browser now manually (or navigate to that particular URL), it will render the test component:
+
+[![enter image description here][3]][3]
+
+
+
+# 3. Code
 
 I have published a full working example on GitHub: https://github.com/itinance/quasar-router-bug
 
@@ -126,21 +142,6 @@ And this is the test-component, which is the target component where I want to us
       }
     });
     </script>
-
-3. What happens instead?
-
-3.1 This is the index page, containing the button that shall send the user to another page:
-
-[![enter image description here][1]][1]
-
-3.2. When I click on the Button, the URL will be updated correctly but the test-component won't get rendered at all:
-
-[![enter image description here][2]][2]
-
-3.3. But when I refresh the web browser now manually (or navigate to that particular URL), it will render the test component:
-
-[![enter image description here][3]][3]
-
 
 
 [1]: https://i.stack.imgur.com/Z4mBw.png
