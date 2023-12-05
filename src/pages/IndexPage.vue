@@ -11,10 +11,18 @@
         <div>
           In order to navigate to the test page, you need to manually reload the page after clicking the button.
           Otherwise, only a white page will be rendered.
-          <q-btn align="left" class="btn-fixed-width" color="primary" label="Go to test page" @click="doRedirect"/>
+          <q-btn align="left" class="btn-fixed-width" color="primary" label="Go to test page using Router" @click="doRedirect"/>
         </div>
       </div>
 
+      <div class="row">
+        <div>
+          <br><br>
+          Ugly workaround using plain vanilla javascript:
+
+          <q-btn align="left" class="btn-fixed-width" color="orange" label="Workaround: Go to test page with window.location" @click="doWorkaround"/>
+        </div>
+      </div>
 
     </div>
   </q-page>
@@ -43,7 +51,13 @@ export default defineComponent({
       console.log('doRedirect');
       router.push({name: 'test'});
     }
-    return {doRedirect};
+
+    const doWorkaround = () => {
+      console.log('doWorkaround');
+      window.location.href = '/test';
+    }
+
+    return {doRedirect, doWorkaround};
   }
 });
 </script>
